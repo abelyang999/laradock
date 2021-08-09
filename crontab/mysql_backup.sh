@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 set -o pipefail
-BACKUP_FOLDER=/root/github/docker-compose-laravel/mysql/backup
+BACKUP_FOLDER=/root/lara/mysql/backup
 NAME=laradock_mysql_1
 mkdir -p ${BACKUP_FOLDER}
 
