@@ -22,7 +22,6 @@ docker cp ~/.my.cnf ${NAME}:/root/.my.cnf
 # compatibility issue
 docker exec -i ${NAME} mysql -u root -s -e "set global show_compatibility_56=on"
 
-# you said we need to use sed/awk althogh this looks like stupid :-(
 for db in `docker exec -i ${NAME} mysql -u root -s -e "show databases" `
 do
 	docker exec -i ${NAME} mysqldump --single-transaction --add-drop-database  --add-drop-table ${db} | gzip > ${BACKUP_FOLDER}/mysql-$(date "+%Y%m%d%H")-${db}.gz 2>/dev/null
