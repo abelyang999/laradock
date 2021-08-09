@@ -103,7 +103,7 @@
 
     $> docker-compose ps
               Name                          Command               State                                Ports
-    ---------------------------------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------------------------------------------
     laradock_docker-in-docker_1   dockerd-entrypoint.sh            Up      2375/tcp, 2376/tcp
     laradock_mysql_1              docker-entrypoint.sh mysqld      Up      0.0.0.0:3306->3306/tcp,:::3306->3306/tcp, 33060/tcp
     laradock_nginx_1              /docker-entrypoint.sh /bin ...   Up      0.0.0.0:443->443/tcp,:::443->443/tcp,
@@ -158,9 +158,6 @@
   * Write a script to do daily backup && housekeeping ,see [Source](https://github.com/abelyang999/laradock/blob/master/crontab/mysql_backup.sh)
 
   * Put it in crontab
-```
-00 12 * * * ~root/laradock/crontab/mysql_backup.sh
-```
-
-
-
+  ```
+  00 12 * * * ~root/laradock/crontab/mysql_backup.sh
+  ```
