@@ -154,6 +154,7 @@
   | 00:00:23            |
   +---------------------+
   1 row in set (0.05 sec)
+  ```
 
   * Write a script to do daily backup && housekeeping ,see [Source](https://github.com/abelyang999/laradock/blob/master/crontab/mysql_backup.sh)
 
