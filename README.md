@@ -162,6 +162,7 @@ set -e
 set -o pipefail
 BACKUP_FOLDER=/root/github/docker-compose-laravel/mysql/backup
 NAME=laradock_mysql_1
+mkdir -p ${BACKUP_FOLDER}
 
 # Password Warning issue
 cat <<EOF > ~/.my.cnf
@@ -179,9 +180,6 @@ docker cp ~/.my.cnf ${NAME}:/root/.my.cnf
 
 # compatibility issue
 docker exec -i ${NAME} mysql -u root -s -e "set global show_compatibility_56=on"
-
-BACKUP_FOLDER=/root/github/docker-compose-laravel/mysql/backup
-mkdir -p ${BACKUP_FOLDER}
 
 # we need to use sed/awk althogh this looks like stupid :-(
 for db in `docker exec -i ${NAME} mysql -u root -s -e "show databases" `
