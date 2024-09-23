@@ -6,9 +6,9 @@
     APP_CODE_PATH_HOST=../projects/laravel-test
     PHP_VERSION=7.4
     MYSQL_VERSION=5.7
-    MYSQL_DATABASE=smartcloud
+    MYSQL_DATABASE=smart
     MYSQL_USER=smart
-    MYSQL_PASSWORD=cloud
+    MYSQL_PASSWORD=smart
     DATA_PATH_HOST=/var/lib/mysql
 
     ```
@@ -24,7 +24,7 @@
     # Suspeng there is a minor bug, permission issue on storage/ folder
     root@68437517565e:/var/www#  cd laravel/ && chown -R laradock -R storage
     ```
-  * add nginx site file (nginx/site/smartcloud.site):
+  * add nginx site file (nginx/site/smart.site):
     ```
     server {
 
@@ -38,7 +38,7 @@
         # ssl_certificate_key /etc/nginx/ssl/default.key;
 
         # tweak these 2 lines
-        server_name smartcloud.site;
+        server_name smart.site;
         root /var/www/laravel/public;
         index index.php index.html index.htm;
 
@@ -74,7 +74,7 @@
     ```
   * add site into `/etc/hosts`    
     ```
-    127.0.0.1   localhost localhost.localdomain smartcloud.site
+    127.0.0.1   localhost localhost.localdomain smart.site
 
     ```
   * restartup service and make sure everything is running well as expected:
@@ -121,7 +121,7 @@
     ```
   * test service
     ```
-    $> curl smartcloud.site/ -s |grep -i title
+    $> curl smart.site/ -s |grep -i title
         <title>Laravel</title>
 
     ```
